@@ -11,7 +11,11 @@ For use as a material reference chart for what not to combine in the shop.
 Item
 
 - metadata
+  - name
+  - values
 - relationships
+  - name
+  - values
 
 ## Implementation
 

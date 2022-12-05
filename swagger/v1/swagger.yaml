@@ -1,0 +1,32 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/blogs":
+    post:
+      summary: Creates a material
+      tags:
+      - Blogs
+      parameters: []
+      responses:
+        '201':
+          description: material created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
