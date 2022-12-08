@@ -1,0 +1,2 @@
+class MaterialsRelationshipsType < ApplicationRecord
+end

@@ -44,3 +44,9 @@ to generate the swagger files:
 ```bash
 rake rswag
 ```
+
+## Toolchain
+
+- Ruby 3.1.0
+- Rails 7.0.4
+- sqltools - VSCode Extension for sqlite databases

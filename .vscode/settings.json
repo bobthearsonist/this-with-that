@@ -1,0 +1,18 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:this-with-that}/db/test.sqlite3",
+      "name": "TNT test",
+      "group": "TNT"
+    },
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "TNT development",
+      "group": "TNT",
+      "database": "${workspaceFolder:this-with-that}/db/development.sqlite3"
+    }
+  ]
+}
