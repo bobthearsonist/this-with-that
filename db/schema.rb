@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_221_207_180_842) do
+ActiveRecord::Schema[7.0].define(version: 20_221_208_000_049) do
   create_table 'materials', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', null: false
@@ -21,6 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 20_221_207_180_842) do
     t.integer 'material_source_id', null: false
     t.integer 'material_dest_id', null: false
     t.index '"material_id"', name: 'index_materials_relationships_on_material_id_and_material_id'
+    t.index %w[material_source_id material_dest_id],
+            name: 'unique_materials_relationships_on_material_id_and_material_id', unique: true
   end
 
   create_table 'materials_relationships_relationships_types', id: false, force: :cascade do |t|
