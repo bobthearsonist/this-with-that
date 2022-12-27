@@ -3,6 +3,7 @@ runtime: ruby31
 build:
   commands:
     build:
-      - bundle install
+# :facepalm: they dont actually give you logs https://github.com/aws/apprunner-roadmap/issues/110
+      - bundle install 2>&1
 run: 
   command: bundle exec rackup --host 0.0.0.0 -p 8080
