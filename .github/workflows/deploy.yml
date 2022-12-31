@@ -16,7 +16,7 @@ on:
       - hosted-api # TODO remove after branch is merged to main
 
 env:
-  AWS_REGION: use-east-1 # TODO use an env var, maybe direct form the aws cli profile?
+  AWS_REGION: us-east-1 # TODO use an env var, maybe direct form the aws cli profile?
   ECR_REPOSITORY: thiswiththat
   ECS_SERVICE: thiswiththat-service
   ECS_CLUSTER: thiswiththat
