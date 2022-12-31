@@ -2,6 +2,8 @@
 
 An API set for storing information that contains relationships between items.
 
+[![RSpec](https://github.com/bobthearsonist/this-with-that/actions/workflows/test.yml/badge.svg)](https://github.com/bobthearsonist/this-with-that/actions/workflows/test.yml)
+
 ## MSDS information
 
 For use as a material reference chart for what not to combine in the shop.
@@ -44,6 +46,18 @@ to generate the swagger files:
 ```bash
 rake rswag
 ```
+
+### Docker
+
+The hosted image is built form a docker container. to build and run with docker use
+
+```bash
+➜ docker build .
+```
+
+### Hosting
+
+The app is hosted with AWS App Runner. the [apprunner.yml](apprunner.yml) file came straight [from the AWS docs](https://docs.aws.amazon.com/apprunner/latest/dg/service-source-code-ruby.html)
 
 ## Toolchain
 
