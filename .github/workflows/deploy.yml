@@ -17,10 +17,10 @@ on:
 
 env:
   AWS_REGION: us-east-1 # TODO use an env var, maybe direct form the aws cli profile?
-  # TODO maybe use these later
-  # ECR_REPOSITORY: thiswiththat
-  # ECS_SERVICE: thiswiththat-service
-  # ECS_CLUSTER: thiswiththat-cluster
+  ECR_REPOSITORY: thiswiththat-repository
+  ECS_SERVICE: thiswiththat-service
+  ECS_CLUSTER: thiswiththat-cluster
+  ECS_CONTAINER: thiswiththat-container
 
 jobs:
   deploy:
@@ -61,13 +61,13 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: thiswiththat-container
+          container-name: ${{ env.ECS_CONTAINER }}
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1.4.10
         with:
           task-definition: ${{ steps.task-definition.outputs.task-definition }}
-          service: thiswiththat-service
-          cluster: thiswiththat-cluster
+          service: ${{ env.ECS_SERVICE }}
+          cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
